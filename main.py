@@ -17,5 +17,12 @@ def get_book_text(file):
     return file_contents
     
 from stats import import_words, count_charachters, sort_list
-    
-main("books/frankenstein.txt")
+import sys
+
+try:
+    file_location = sys.argv[1]
+except:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
+main(sys.argv[1])
